@@ -98,7 +98,6 @@ input, textarea { font-family: inherit; }
   font-weight: 500;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: var(--sage);
 }
 .t-label-line::before {
   content: '';
@@ -379,7 +378,7 @@ input, textarea { font-family: inherit; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: #080E0A;
+  background: #1A2E20;
 }
 .hero-bg-svg {
   position: absolute;
@@ -392,9 +391,9 @@ input, textarea { font-family: inherit; }
   background: linear-gradient(
     175deg,
     rgba(5,10,7,0.0) 0%,
-    rgba(5,10,7,0.0) 30%,
-    rgba(5,10,7,0.55) 68%,
-    rgba(5,10,7,0.98) 100%
+    rgba(5,10,7,0.0) 40%,
+    rgba(5,10,7,0.38) 68%,
+    rgba(5,10,7,0.92) 100%
   );
 }
 .hero-content {
@@ -411,6 +410,7 @@ input, textarea { font-family: inherit; }
   margin-bottom: 28px;
   opacity: 0;
   animation: fadeUp 0.7s 0.3s var(--ease) forwards;
+  color: rgba(242,244,240,0.9);
 }
 .hero-kicker::before {
   content: '';
@@ -432,7 +432,7 @@ input, textarea { font-family: inherit; }
   font-family: var(--display);
   font-style: italic;
   font-weight: 300;
-  color: var(--sage);
+  color: #F2F4F0;
   text-transform: none;
   font-size: 0.9em;
   letter-spacing: 0.02em;
@@ -1651,88 +1651,82 @@ footer {
     <svg class="hero-bg-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"
       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
-        <!-- Deep forest/trail base -->
+        <!-- Bright golden-hour sky -->
         <linearGradient id="hSky" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#1C3028"/>
-          <stop offset="40%" stop-color="#243820"/>
-          <stop offset="100%" stop-color="#0D1A10"/>
+          <stop offset="0%" stop-color="#6B8E6A"/>
+          <stop offset="35%" stop-color="#4A7050"/>
+          <stop offset="70%" stop-color="#2E5038"/>
+          <stop offset="100%" stop-color="#1A3022"/>
         </linearGradient>
-        <!-- Warm golden horizon light — trail runner at golden hour -->
-        <radialGradient id="hSun" cx="68%" cy="38%" r="38%">
-          <stop offset="0%" stop-color="rgba(200,160,80,0.55)"/>
-          <stop offset="50%" stop-color="rgba(160,110,50,0.25)"/>
+        <!-- Strong warm sun glow right side -->
+        <radialGradient id="hSun" cx="72%" cy="30%" r="45%">
+          <stop offset="0%" stop-color="rgba(240,200,90,0.85)"/>
+          <stop offset="30%" stop-color="rgba(200,160,60,0.55)"/>
+          <stop offset="65%" stop-color="rgba(160,120,40,0.25)"/>
           <stop offset="100%" stop-color="transparent"/>
         </radialGradient>
-        <!-- Strong vignette from all edges -->
-        <radialGradient id="hVig" cx="50%" cy="45%" r="70%">
-          <stop offset="0%" stop-color="transparent"/>
-          <stop offset="100%" stop-color="rgba(5,10,7,0.85)"/>
+        <!-- Secondary warm haze -->
+        <radialGradient id="hHaze" cx="68%" cy="45%" r="55%">
+          <stop offset="0%" stop-color="rgba(180,140,60,0.3)"/>
+          <stop offset="100%" stop-color="transparent"/>
         </radialGradient>
-        <!-- Bottom dark pool for stats/buttons -->
+        <!-- Bottom dark for text legibility only -->
         <linearGradient id="hBot" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stop-color="transparent"/>
-          <stop offset="55%" stop-color="rgba(8,14,10,0.45)"/>
-          <stop offset="100%" stop-color="rgba(5,10,7,0.97)"/>
+          <stop offset="60%" stop-color="rgba(8,14,10,0.35)"/>
+          <stop offset="100%" stop-color="rgba(5,10,7,0.94)"/>
         </linearGradient>
-        <!-- Left side dark for text legibility -->
+        <!-- Left edge slight dark for text -->
         <linearGradient id="hLeft" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="rgba(5,10,7,0.75)"/>
-          <stop offset="60%" stop-color="rgba(5,10,7,0.15)"/>
-          <stop offset="100%" stop-color="transparent"/>
+          <stop offset="0%" stop-color="rgba(5,10,7,0.55)"/>
+          <stop offset="50%" stop-color="rgba(5,10,7,0.0)"/>
         </linearGradient>
       </defs>
 
-      <!-- Deep forest base -->
+      <!-- Bright sky base -->
       <rect width="1440" height="900" fill="url(#hSky)"/>
-
-      <!-- Distant mountain ridge — very dark, layered -->
-      <path d="M0 350 Q120 290 240 310 Q340 328 440 285 Q540 242 640 270 Q720 292 800 255 Q900 214 1000 240 Q1100 266 1200 230 Q1300 194 1440 210 L1440 420 L0 420Z"
-        fill="#162A1A" opacity="0.9"/>
-      <path d="M0 310 Q100 260 200 278 Q300 296 400 258 Q500 220 600 248 Q700 276 800 240 Q920 198 1040 222 Q1160 246 1300 208 Q1380 190 1440 200 L1440 340 L0 340Z"
-        fill="#0E1E12" opacity="0.95"/>
-
-      <!-- Mid-ground forest treeline — dense silhouette -->
-      <path d="M-10 480
-        Q20 458 40 465 L48 442 L56 465
-        Q80 450 100 458 L110 430 L120 458
-        Q145 444 165 452 L178 422 L190 452
-        Q215 438 238 446 L252 415 L266 446
-        Q290 432 315 440 L330 408 L345 440
-        Q372 424 400 432 L416 398 L432 432
-        Q460 416 490 424 L508 390 L525 424
-        Q555 408 588 416 L605 380 L622 416
-        Q655 400 690 408 L708 372 L726 408
-        Q760 392 798 400 L818 362 L838 400
-        Q875 382 915 390 L936 350 L958 390
-        Q998 372 1040 380 L1062 338 L1085 380
-        Q1128 360 1172 368 L1195 325 L1218 368
-        Q1265 348 1312 356 L1336 310 L1360 356
-        Q1395 336 1440 344 L1440 520 L-10 520Z"
-        fill="#0A1A0D"/>
-
-      <!-- Closer trail ground — the path surface -->
-      <path d="M0 580 Q180 548 360 560 Q540 572 720 548 Q900 524 1080 540 Q1260 556 1440 528 L1440 900 L0 900Z"
-        fill="#111E14"/>
-      <path d="M0 640 Q200 620 420 628 Q640 636 860 616 Q1040 600 1200 612 Q1320 620 1440 605 L1440 900 L0 900Z"
-        fill="#0D1810"/>
-      <path d="M0 720 Q280 706 560 712 Q840 718 1120 700 Q1300 688 1440 695 L1440 900 L0 900Z"
-        fill="#091210"/>
-
-      <!-- Narrow winding trail path — dirt track through forest -->
-      <path d="M580 520 Q600 560 590 600 Q582 635 595 670 Q610 710 600 760 Q592 800 605 860 L625 860 Q615 800 622 760 Q634 710 620 670 Q606 635 614 600 Q624 560 605 520Z"
-        fill="#2A3A1E" opacity="0.7"/>
-
-      <!-- Scattered foliage / undergrowth hints -->
-      <ellipse cx="200" cy="570" rx="60" ry="18" fill="#0F1C12" opacity="0.8"/>
-      <ellipse cx="500" cy="555" rx="45" ry="14" fill="#0F1C12" opacity="0.7"/>
-      <ellipse cx="900" cy="545" rx="70" ry="20" fill="#0A1610" opacity="0.75"/>
-      <ellipse cx="1250" cy="558" rx="55" ry="16" fill="#0A1610" opacity="0.7"/>
-
-      <!-- Golden hour glow right side -->
+      <!-- Strong golden sun glow -->
       <rect width="1440" height="900" fill="url(#hSun)"/>
+      <rect width="1440" height="900" fill="url(#hHaze)"/>
 
-      <!-- Strong overlays for contrast -->
-      <rect width="1440" height="900" fill="url(#hVig)"/>
+      <!-- Distant mountain ridges — visible, lighter tones -->
+      <path d="M0 360 Q120 305 240 325 Q340 342 440 298 Q540 254 640 282 Q720 306 800 268 Q900 226 1000 252 Q1100 278 1200 242 Q1300 206 1440 220 L1440 430 L0 430Z"
+        fill="#2A4A30" opacity="0.75"/>
+      <path d="M0 315 Q100 268 200 286 Q300 304 400 264 Q500 224 600 252 Q700 280 800 244 Q920 202 1040 226 Q1160 250 1300 212 Q1380 194 1440 205 L1440 350 L0 350Z"
+        fill="#1E3A26" opacity="0.85"/>
+
+      <!-- Bright mid-ground hills — clearly visible -->
+      <path d="M0 440 Q180 400 360 418 Q540 436 720 400 Q880 368 1040 388 Q1200 408 1440 372 L1440 520 L0 520Z"
+        fill="#3A6040" opacity="0.9"/>
+
+      <!-- Treeline silhouette — distinct and readable -->
+      <path d="M-10 500
+        Q25 478 48 486 L56 460 L65 486
+        Q92 472 115 480 L127 450 L139 480
+        Q168 464 194 472 L210 440 L226 472
+        Q255 456 284 464 L302 430 L320 464
+        Q352 446 384 454 L404 418 L424 454
+        Q458 436 494 444 L515 406 L536 444
+        Q572 424 610 432 L632 393 L654 432
+        Q692 412 732 420 L755 380 L778 420
+        Q818 398 860 406 L884 365 L908 406
+        Q950 383 994 391 L1018 348 L1042 391
+        Q1088 366 1134 374 L1158 330 L1182 374
+        Q1232 348 1280 356 L1305 310 L1330 356
+        Q1372 330 1440 338 L1440 540 L-10 540Z"
+        fill="#162A1C"/>
+
+      <!-- Forest floor — warm earthy greens -->
+      <path d="M0 580 Q180 555 360 565 Q540 575 720 552 Q900 529 1080 544 Q1260 559 1440 534 L1440 900 L0 900Z"
+        fill="#1E3428"/>
+      <path d="M0 650 Q200 632 420 639 Q640 646 860 626 Q1040 610 1200 621 Q1320 629 1440 614 L1440 900 L0 900Z"
+        fill="#182C20"/>
+
+      <!-- Winding trail -->
+      <path d="M645 540 Q662 572 654 608 Q648 638 660 672 Q673 708 664 755 Q657 792 668 860 L688 860 Q700 792 694 755 Q686 708 698 672 Q712 638 706 608 Q696 572 712 540Z"
+        fill="#3A5030" opacity="0.65"/>
+
+      <!-- Text legibility overlays — minimal, only bottom and left -->
       <rect width="1440" height="900" fill="url(#hBot)"/>
       <rect width="1440" height="900" fill="url(#hLeft)"/>
     </svg>
@@ -1740,16 +1734,16 @@ footer {
   </div>
 
   <div class="hero-content">
-    <p class="hero-kicker t-label">Natural Fibre Active · Est. 2024 · Australia</p>
+    <p class="hero-kicker t-label">Est. Paddington, Sydney</p>
     <h1 class="hero-headline" id="hero-heading">
       BUILT<br>FOR THE<br><span class="hl-em">long haul.</span>
     </h1>
     <p class="hero-body">
-      Running and gym wear engineered from earth's highest-performance natural fibres.
+      Engineered from earth's highest-performance natural fibres.
       No synthetics. No shortcuts. Designed for distance.
     </p>
     <div class="hero-actions">
-      <a href="#running" class="btn btn-primary">Shop Running</a>
+      <a href="#running" class="btn btn-outline">Shop Running</a>
       <a href="#gym" class="btn btn-outline">Shop Gym</a>
     </div>
     <div class="hero-stats" aria-label="Brand statistics">
@@ -2416,7 +2410,7 @@ footer {
 
   <div class="footer-bottom">
     <p class="footer-copy">
-      © 2024 enduro Active Pty Ltd · ABN XX XXX XXX XXX · All rights reserved
+      © 2026 enduro Active Pty Ltd · ABN XX XXX XXX XXX · All rights reserved
     </p>
     <nav class="footer-legal" aria-label="Legal links">
       <a href="#">Privacy Policy</a>
