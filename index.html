@@ -309,7 +309,7 @@ input, textarea { font-family: inherit; }
   padding: 11px 0;
   overflow: hidden;
   white-space: nowrap;
-  margin-top: 0;
+  margin-top: 64px;
 }
 .ticker-track {
   display: inline-flex;
@@ -361,9 +361,9 @@ input, textarea { font-family: inherit; }
   background: linear-gradient(
     175deg,
     rgba(5,10,7,0.0) 0%,
-    rgba(5,10,7,0.0) 38%,
-    rgba(5,10,7,0.42) 68%,
-    rgba(14,20,16,0.96) 100%
+    rgba(5,10,7,0.0) 30%,
+    rgba(5,10,7,0.28) 60%,
+    rgba(5,10,7,0.72) 100%
   );
 }
 .hero-content {
@@ -372,8 +372,8 @@ input, textarea { font-family: inherit; }
   padding: 0 48px;
   max-width: 1400px;
 }
-/* Hero height accounts for fixed opaque nav */
-#hero { padding-top: 64px; }
+/* Hero sits below ticker which sits below nav */
+#hero { padding-top: 0; }
 /* Hero itself sits behind nav — the ticker pushes it down correctly */
 .hero-kicker {
   display: flex;
@@ -1479,7 +1479,7 @@ footer {
     grid-template-columns: unset;
   }
   #nav.scrolled { height: 48px; padding: 0 20px; }
-  .ticker-bar { margin-top: 0; }
+  .ticker-bar { margin-top: 56px; }
   .nav-center, .nav-search, .nav-account { display: none; }
   .nav-logo { justify-self: unset; font-size: 1.2rem; color: #1F3D35; }
   
@@ -1529,6 +1529,80 @@ footer {
   position:absolute;width:1px;height:1px;
   padding:0;margin:-1px;overflow:hidden;
   clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+
+/* ─── COLLECTIONS BRIDGE ─── */
+.collections-bridge {
+  background: #FAFAF8;
+  border-bottom: 1px solid rgba(26,28,27,0.07);
+}
+.bridge-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 32px 48px 24px;
+  border-bottom: 1px solid rgba(26,28,27,0.06);
+}
+.bridge-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0 40px;
+}
+.bridge-num {
+  font-family: var(--heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--brand);
+  line-height: 1;
+}
+.bridge-label {
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(26,28,27,0.45);
+}
+.bridge-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(26,28,27,0.1);
+  flex-shrink: 0;
+}
+.bridge-label-row {
+  padding: 16px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bridge-section-label {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(26,28,27,0.4);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.bridge-section-label::before,
+.bridge-section-label::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: rgba(26,28,27,0.15);
+}
+@media (max-width: 600px) {
+  .bridge-stats { padding: 24px 20px 18px; }
+  .bridge-stat { padding: 0 20px; }
+  .bridge-num { font-size: 1.5rem; }
+  .bridge-label-row { padding: 12px 20px; }
 }
 
 </style>
@@ -1651,21 +1725,7 @@ footer {
       <a href="#running" class="btn btn-outline">Shop Running</a>
       <a href="#gym" class="btn btn-outline">Shop Gym</a>
     </div>
-    <div class="hero-stats" aria-label="Brand statistics">
-      <div class="hero-stat">
-        <div class="hero-stat-num">100%</div>
-        <div class="hero-stat-label">Natural Fibres</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">0</div>
-        <div class="hero-stat-label">Microplastics</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">4</div>
-        <div class="hero-stat-label">Core Fibres</div>
-      </div>
 
-    </div>
   </div>
 
   <div class="hero-scroll-indicator" aria-hidden="true">
@@ -1673,6 +1733,30 @@ footer {
     <span>Scroll</span>
   </div>
 </section>
+
+
+<!-- ═══ STATS + COLLECTIONS BRIDGE ═══ -->
+<div class="collections-bridge">
+  <div class="bridge-stats">
+    <div class="bridge-stat">
+      <span class="bridge-num">100%</span>
+      <span class="bridge-label">Natural Fibres</span>
+    </div>
+    <div class="bridge-divider"></div>
+    <div class="bridge-stat">
+      <span class="bridge-num">0</span>
+      <span class="bridge-label">Microplastics</span>
+    </div>
+    <div class="bridge-divider"></div>
+    <div class="bridge-stat">
+      <span class="bridge-num">4</span>
+      <span class="bridge-label">Core Fibres</span>
+    </div>
+  </div>
+  <div class="bridge-label-row">
+    <span class="bridge-section-label">Shop by Collection</span>
+  </div>
+</div>
 
 <!-- ═══ CATEGORY PANELS ═══ -->
 <section id="running" aria-labelledby="cat-heading">
