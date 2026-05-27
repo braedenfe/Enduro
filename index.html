@@ -1007,9 +1007,10 @@ input, textarea { font-family: inherit; }
 }
 .why-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1fr;
+  gap: 0;
   align-items: center;
+  max-width: 860px;
 }
 .why-visual {
   position: relative;
@@ -1921,62 +1922,6 @@ footer {
 <!-- ═══ WHY ENDURO ═══ -->
 <section id="why" class="section-wrap" aria-labelledby="why-heading">
   <div class="why-grid">
-    <div class="why-visual reveal r-left">
-      <div class="why-visual-inner">
-        <svg viewBox="0 0 480 600" preserveAspectRatio="xMidYMid slice"
-          xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs>
-            <linearGradient id="wSky" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#B8C8B0"/>
-              <stop offset="100%" stop-color="#7A9A78"/>
-            </linearGradient>
-            <linearGradient id="wGround" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#8B7A58"/>
-              <stop offset="100%" stop-color="#6B5A38"/>
-            </linearGradient>
-            <radialGradient id="wLight" cx="60%" cy="25%" r="45%">
-              <stop offset="0%" stop-color="rgba(220,210,180,0.6)"/>
-              <stop offset="100%" stop-color="transparent"/>
-            </radialGradient>
-          </defs>
-          <!-- Sky — misty trail morning -->
-          <rect width="480" height="600" fill="url(#wSky)"/>
-          <rect width="480" height="600" fill="url(#wLight)"/>
-          <!-- Mountain silhouettes — layered -->
-          <path d="M0 280 Q60 220 120 240 Q160 254 200 210 Q240 166 280 200 Q320 234 360 195 Q400 156 440 185 Q460 198 480 180 L480 320 L0 320Z"
-            fill="#5A7055" opacity="0.7"/>
-          <path d="M0 320 Q80 270 160 290 Q220 304 280 265 Q340 226 400 255 Q440 272 480 248 L480 360 L0 360Z"
-            fill="#4A6045" opacity="0.8"/>
-          <!-- Forest tree line -->
-          <path d="M0 360 Q40 340 80 348 Q120 356 160 338 Q200 320 240 334 Q280 348 320 330 Q360 312 400 326 Q440 340 480 322 L480 400 L0 400Z"
-            fill="#3A5035"/>
-          <!-- Trail path winding down -->
-          <path d="M220 400 Q240 420 250 450 Q255 470 245 500 Q238 520 244 560 Q248 580 240 600 L260 600 Q265 580 260 560 Q254 520 262 500 Q272 470 268 450 Q258 420 272 400Z"
-            fill="#C4B890" opacity="0.6"/>
-          <!-- Ground / trail foreground -->
-          <path d="M0 500 Q120 470 240 480 Q360 490 480 465 L480 600 L0 600Z"
-            fill="url(#wGround)"/>
-          <path d="M0 545 Q100 528 220 535 Q340 542 480 520 L480 600 L0 600Z"
-            fill="#7A6A48"/>
-          <!-- Rocks on trail -->
-          <ellipse cx="140" cy="540" rx="14" ry="7" fill="#5A4A30" opacity="0.6"/>
-          <ellipse cx="360" cy="555" rx="10" ry="5" fill="#5A4A30" opacity="0.5"/>
-          <ellipse cx="80" cy="570" rx="8" ry="4" fill="#4A3C28" opacity="0.5"/>
-          <!-- Sun / light haze top right -->
-          <circle cx="380" cy="60" r="45" fill="rgba(255,240,180,0.25)"/>
-          <circle cx="380" cy="60" r="70" fill="rgba(255,240,180,0.1)"/>
-          <defs>
-            <linearGradient id="whyBot" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="50%" stop-color="transparent"/>
-              <stop offset="100%" stop-color="rgba(20,30,20,0.5)"/>
-            </linearGradient>
-          </defs>
-          <rect width="480" height="600" fill="url(#whyBot)"/>
-        </svg>
-
-      </div>
-    </div>
-
     <div class="reveal reveal-delay-2">
       <div class="section-header" style="margin-bottom:0">
         <p class="section-kicker">The enduro Difference</p>
